@@ -1,31 +1,23 @@
 package com.mysql.dbeditor.entity;
 
-
-import javax.persistence.*;
-import java.util.Set;
-
-@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String lastname;
     private String email;
     private String password;
-    @OneToMany(fetch = FetchType.EAGER)
-    private Set<ServerInfo> serverInfos;
 
     public User(){}
-    public User(String name, String lastname, String email, String password, Set<ServerInfo> serverInfos) {
+
+    public User(int id, String name, String lastname, String email, String password) {
+        this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.serverInfos = serverInfos;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -63,13 +55,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Set<ServerInfo> getServerInfos() {
-        return serverInfos;
-    }
-
-    public void setServerInfos(Set<ServerInfo> serverInfos) {
-        this.serverInfos = serverInfos;
     }
 }

@@ -1,26 +1,21 @@
 package com.mysql.dbeditor.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class ServerInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int userid;
     private String serverIp;
     private String portNumber;
-    private String username;
+    private String userName;
     private String password;
 
     public ServerInfo(){}
 
-    public ServerInfo(String serverIp, String portNumber, String username, String password) {
+    public ServerInfo(int id, int userid, String serverIp, String portNumber, String userName, String password) {
+        this.id = id;
+        this.userid = userid;
         this.serverIp = serverIp;
         this.portNumber = portNumber;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
     }
 
@@ -30,6 +25,14 @@ public class ServerInfo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public String getServerIp() {
@@ -48,12 +51,12 @@ public class ServerInfo {
         this.portNumber = portNumber;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
