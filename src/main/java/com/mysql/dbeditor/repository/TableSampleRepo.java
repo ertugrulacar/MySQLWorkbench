@@ -71,12 +71,7 @@ public class TableSampleRepo {
 
         List<String> eto = tableSampleRepo.getColumnNamesOfATable("iau", "Book");
         List<List<String>> list  = tableSampleRepo.getRowsOfATable("iau", "Book");
-        for(int i=0;i<list.size();i++){
-            for(int j=0;j<list.get(i).size();j++){
-                System.out.print(list.get(i).get(j) + "  --  ");
-            }
-            System.out.println();
-        }
+
 
     }
 
